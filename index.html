@@ -2,13 +2,18 @@
   <html>
     <head>
       <title>Nearby Cafes</title>
-      <!-- @TODO make the font-size for the text on the page responsive too -->
       <link rel="stylesheet" href="main.css" type="text/css" />
-      <!-- Include the Google Maps API -->
       <script type="text/javascript" src="config.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeWCL9MAAj_ZXzCK0KGIk400Q2SfOqSOA&libraries=places,geometry"></script>
+      <script id="googleMapsScript"></script>
       <script type="text/javascript" src="Winwheel.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+      <script>
+        window.onload = function () {
+          document.getElementById(
+            "googleMapsScript"
+          ).src = `https://maps.googleapis.com/maps/api/js?key=${config.googToken}&libraries=places,geometry`;
+        };
+      </script>
     </head>
 
     <body>
